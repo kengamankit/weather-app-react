@@ -6,7 +6,7 @@ import rainIcon from "./../assets/rain (1).png";
 import windIcon from "./../assets/windy.png";
 import humidity from "./../assets/humidity.png";
 import FutureWeatherComponent from "../components/futureWeatherComponent";
-import navigate from "../inc/scripts/utilities";
+import { useNavigate } from "react-router-dom";
 import ForecastWeatherItems from "../components/forecastWeatherItems";
 import Spinner from "../components/spinner";
 import Ripple1 from "./../assets/ripple1.gif";
@@ -32,6 +32,7 @@ import WindIcon from "./../assets/wind-icon.svg";
 import PressureIcon from "./../assets/pressure-icon.svg";
 
 const WeatherApp = () => {
+	const navigate = useNavigate();
 	//check if the user navigated from the home page
 	if (!db.get("HOME_PAGE_SEEN")) {
 		navigate("/");
@@ -116,7 +117,7 @@ const WeatherApp = () => {
 	];
 
 	const showMoreWeather = () => {
-		navigate("weathermain");
+		navigate("/weathermain");
 	};
 
 	const uiForeCastData = forecastData.map((data, index) => {

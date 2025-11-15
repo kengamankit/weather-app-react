@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import Footer from "../components/footer";
-import navigate from "../inc/scripts/utilities";
+import { useNavigate } from "react-router-dom";
 import Button from "../components/button";
 import Spinner from "../components/spinner";
 import { db } from "../backend/app_backend";
 import * as settings from "./../backend/settings";
 const Settings = () => {
+	const navigate = useNavigate();
 	const navigateHome = () => {
-		navigate("./weather");
+		navigate("/weather");
 	};
 
 	const [defaultLocation, setDefaultLocation] = useState(

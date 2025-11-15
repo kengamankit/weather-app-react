@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Footer from "../components/footer";
-import navigate from "../inc/scripts/utilities";
+import { useNavigate } from "react-router-dom";
 import Spinner from "../components/spinner";
 import Button from "./../components/button";
 import jQuery from "jquery";
@@ -26,6 +26,7 @@ import FewClouds from "./../assets/static/few-clouds.svg";
 import Haze from "./../assets/static/haze.svg";
 import * as utilis from "./../inc/scripts/utilities";
 const ForecastWeather = () => {
+	const navigate = useNavigate();
 	//check if the user navigated from the home page
 	if (!db.get("HOME_PAGE_SEEN")) {
 		navigate("/");

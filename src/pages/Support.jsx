@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import Footer from "../components/footer";
-import navigate from "../inc/scripts/utilities";
+import { useNavigate } from "react-router-dom";
 import Button from "../components/button";
 import Spinner from "../components/spinner";
 const Settings = () => {
+  const navigate = useNavigate();
   const navigateHome = () => {
-    navigate("./weather");
+    navigate("/weather");
   };
 
   const navigateToProject = ()=>{
-    navigate("https://github.com/Adedoyin-Emmanuel/react-weather-app");
+    window.location.href = "https://github.com/Adedoyin-Emmanuel/react-weather-app";
   }
 
   const navigateToGithub = () =>{
-    navigate("https://github.com/Adedoyin-Emmanuel");
+    window.location.href = "https://github.com/Adedoyin-Emmanuel";
   }
 
   const [defaultLocation, setDefaultLocation] = useState("");

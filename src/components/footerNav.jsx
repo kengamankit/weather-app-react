@@ -1,17 +1,18 @@
 import React from "react";
-import navigate from "./../inc/scripts/utilities";
+import { useNavigate } from "react-router-dom";
 
 const FooterNav = (props) => {
+  const navigate = useNavigate();
   const appNavigation = () => {
-    navigate("weather");
+    navigate("/weather");
   };
 
   const settingsNavigation = () => {
-    navigate("settings");
+    navigate("/settings");
   };
 
   const supportNavigation = () => {
-    navigate("support");
+    navigate("/support");
   };
 
   return (

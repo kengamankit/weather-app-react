@@ -2,11 +2,12 @@ import React from "react";
 import Button from "./../components/button";
 import Img_1 from "./../assets/pic_1.png";
 import Spinner from "./../components/spinner";
-import navigate from "./../inc/scripts/utilities";
+import { useNavigate } from "react-router-dom";
 import { db } from "./../backend/app_backend";
 import Swal from "sweetalert2";
 import jQuery from "jquery";
 const Home = () => {
+  const navigate = useNavigate();
   const customBtnStyle = {
     fontSize: "18px",
   };
@@ -57,7 +58,7 @@ const Home = () => {
             db.create("USER_DEFAULT_LOCATION", $defaultLocation);
             db.create("TRACK_SAVED_LOCATION_WEATHER",false);
             db.create("WEATHER_UNIT","metric");
-            navigate("weather");
+            navigate("/weather");
           }
         });
       }

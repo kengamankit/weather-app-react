@@ -1,6 +1,6 @@
 import React from "react";
 import Footer from "../components/footer";
-import navigate from "../inc/scripts/utilities";
+import { useNavigate } from "react-router-dom";
 import Spinner from "../components/spinner";
 import rainIcon from "./../assets/rain (1).png";
 import windIcon from "./../assets/windy.png";
@@ -22,6 +22,7 @@ import HumidityIcon from "./../assets/humidity-icon.svg";
 import WindIcon from "./../assets/wind-icon.svg";
 import PressureIcon from "./../assets/pressure-icon.svg";
 const WeatherMain = (props) => {
+	const navigate = useNavigate();
 	const navigateHome = () => {
 		navigate("/weather");
 	};
